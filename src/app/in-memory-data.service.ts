@@ -49,7 +49,7 @@ export class InMemoryDataService implements InMemoryDbService {
   }
 
   genId(missions: Mission[]): number {
-    return missions.length > 0 ? Math.max(...missions.map(hero => hero.id)) + 1 : 11;
+    return missions.length > 0 ? Math.max(...missions.map(mission => mission.id)) + 1 : 0;
   }
 
 }

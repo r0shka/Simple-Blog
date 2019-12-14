@@ -28,6 +28,14 @@ export class MissionDetailsComponent implements OnInit {
       .subscribe(mission => this.mission = mission);
   }
 
+  /**
+   * Saves mission and navigates to previous view
+   */
+  save(): void {
+    this.missionService.updateMission(this.mission)
+      .subscribe(() => this.goBack());
+  }
+
   goBack(): void {
     this.location.back();
   }

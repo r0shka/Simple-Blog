@@ -4,6 +4,18 @@
     <a routerLink="/mission/{{mission.id}}">
       <span class="badge">{{mission.id}}</span> {{mission.missionName}}
     </a>
+    <button class="delete" title="delete hero"
+            (click)="delete(mission)">x</button>
   </li>
 </ul>
+
+<div>
+  <label>Mission name:
+    <input #missionName />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(missionName.value); missionName.value=''">
+    add
+  </button>
+</div>
 
