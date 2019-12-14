@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<section id="recherche">
+  <p class="titre">Filtre</p>
+  <div id="blocChoix">
+    <span class="blocG">Fonction</span>
+    <input ng-model="nom" class="inputRecherche" type="text" placeholder="Nom de l'hotel" autofocus/></br>
+
+    <span class="blocG">Ville :</span>
+    <input ng-model="ville" class="inputRecherche" type="text" placeholder="Ville"/></br>
+<span class="blocG">Nombre d'étoile minimum :</span>
+<select id="selectEtoile" ng-model="etoile" ng-change="filtre()" class="selectRecherche">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+</select>
+
+<span class="blocG">Recherche</span>
+<input ng-model="mot" class="inputRecherche" size="30" type="text" placeholder="Motß"/>
+</div>
+</section>
+</body>
+</html>
