@@ -1,0 +1,12 @@
+<div *ngIf="mission">
+
+  <button (click)="goBack()">go back</button>
+  <h2>{{mission.missionName | uppercase}} Details</h2>
+  <div><span>id: </span>{{mission.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="mission.missionName" placeholder="name"/>
+    </label>
+  </div>
+
+</div>
