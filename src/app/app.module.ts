@@ -10,13 +10,17 @@ import { MissionDetailsComponent } from './mission-details/mission-details.compo
 import { AppRoutingModule } from './app-routing.module';
 import { MissionSearchComponent } from './mission-search/mission-search.component';
 import { InMemoryDataService }  from './in-memory-data.service';
+import { MissionCreateComponent } from './mission-create/mission-create.component';
+import { MissionEditComponent } from './mission-edit/mission-edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MissionListComponent,
     MissionDetailsComponent,
-    MissionSearchComponent
+    MissionSearchComponent,
+    MissionCreateComponent,
+    MissionEditComponent
   ],
   imports: [
     BrowserModule,

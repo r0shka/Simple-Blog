@@ -4,9 +4,10 @@
   <h2>{{mission.missionName | uppercase}} Details</h2>
   <div><span>id: </span>{{mission.id}}</div>
   <div>
-    <label>name:
-      <input [(ngModel)]="mission.missionName" placeholder="name"/>
-    </label>
+    <p>{{mission.missionName}}</p>
+    <p>{{mission.clientName}}</p>
   </div>
-  <button (click)="save()">save</button>
+  <a routerLink="/edit/{{mission.id}}">Edit</a>
+  <button class="delete" title="delete hero"
+          (click)="delete(mission)">x</button>
 </div>
