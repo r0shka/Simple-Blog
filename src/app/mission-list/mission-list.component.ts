@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Mission } from '../mission';
-import { MissionService } from '../mission.service';
+import { MissionService } from '../services/mission.service';
 
 @Component({
   selector: 'app-mission-list',

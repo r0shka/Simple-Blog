@@ -3,7 +3,8 @@ import { Mission } from '../mission';
 
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import { MissionService} from '../mission.service';
+import { MissionService} from '../services/mission.service';
+import { ExportAsService, ExportAsConfig } from 'ngx-export-as';
 
 @Component({
   selector: 'app-mission-details',
@@ -12,11 +13,17 @@ import { MissionService} from '../mission.service';
 })
 export class MissionDetailsComponent implements OnInit {
 
+  exportAsConfig: ExportAsConfig = {
+    type: 'pdf', // the type you want to download
+    elementId: 'mission-file', // the id of html/table element
+  }
+
   @Input() mission: Mission;
 
   constructor(private route: ActivatedRoute,
               private missionService: MissionService,
-              private location: Location) { }
+              private location: Location,
+              private exportAsService: ExportAsService) { }
 
   ngOnInit() {
     this.getMission();
@@ -35,6 +42,12 @@ export class MissionDetailsComponent implements OnInit {
 
   goBack(): void {
     this.location.back();
+  }
+
+  exportPdf(): void {
+    this.exportAsService.save(this.exportAsConfig, this.mission.missionName).subscribe(() => {
+      // save started
+    });
   }
 
 }

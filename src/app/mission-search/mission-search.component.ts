@@ -6,7 +6,7 @@ import {
 } from 'rxjs/operators';
 
 import { Mission} from '../mission';
-import { MissionService } from '../mission.service';
+import { MissionService } from '../services/mission.service';
 
 @Component({
   selector: 'app-mission-search',

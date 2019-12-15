@@ -9,12 +9,14 @@ import {MissionListComponent} from './mission-list/mission-list.component';
 import {MissionDetailsComponent} from './mission-details/mission-details.component';
 import {AppRoutingModule} from './app-routing.module';
 import {MissionSearchComponent} from './mission-search/mission-search.component';
-import {InMemoryDataService} from './in-memory-data.service';
+import {InMemoryDataService} from './services/in-memory-data.service';
 import {MissionCreateComponent} from './mission-create/mission-create.component';
 import {MissionEditComponent} from './mission-edit/mission-edit.component';
 
 import {MatSliderModule} from '@angular/material/slider';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { ExportAsModule } from 'ngx-export-as';
+
 import {
   MatButtonModule,
   MatCardModule,
@@ -23,7 +25,7 @@ import {
   MatInputModule,
   MatSelectModule,
   MatSidenavModule,
-  MatToolbarModule
+  MatToolbarModule, MatListModule
 } from '@angular/material';
 
 @NgModule({
@@ -53,7 +55,9 @@ import {
     MatSelectModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatListModule,
+    ExportAsModule
   ],
   providers: [
     MatDatepickerModule

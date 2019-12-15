@@ -1,13 +1,18 @@
-<div id="search-component">
-  <h4><label for="search-box">Mission Search</label></h4>
+<div class="search-component">
+  <h4>Mission Search</h4>
 
-  <input #searchBox id="search-box" (input)="search(searchBox.value)" />
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>Mission name</mat-label>
+    <input #searchBox matInput placeholder="Enter mission name" (input)="search(searchBox.value)"/>
+  </mat-form-field>
 
-  <ul class="search-result">
-    <li *ngFor="let mission of missions$ | async" >
-      <a routerLink="/mission/{{mission.id}}">
+  <mat-nav-list>
+    <mat-list-item *ngFor="let mission of missions$ | async">
+      <a matLine routerLink="/mission/{{mission.id}}">
         {{mission.missionName}}
       </a>
-    </li>
-  </ul>
+    </mat-list-item>
+  </mat-nav-list>
+
+
 </div>
