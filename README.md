@@ -1,6 +1,6 @@
 # AA-Angular-Project
 
-Angular project made by Astou Gueye and Vadym Roshka.
+Angular project made by Astou Thiam Gueye and Vadym Roshka.
 Current functionality:
 - displaying list of projects
 - displaying details of a project
