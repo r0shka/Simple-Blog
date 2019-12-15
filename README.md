@@ -4,6 +4,7 @@ Angular project made by Astou Gueye and Vadym Roshka.
 Current functionality:
 - displaying list of projects
 - displaying details of a project
+- exporting details as PDF
 - searching project by the name
 - creating and saving new project
 - editing and saving existing project
