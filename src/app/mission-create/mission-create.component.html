@@ -6,7 +6,10 @@
     <mat-card-content>
       <div>
         <mat-form-field class="example-full-width">
-          <input [(ngModel)]="mission.missionName" matInput placeholder="Mission name"/>
+          <input [(ngModel)]="mission.missionName" matInput placeholder="Mission name" [formControl]="nameFormControl"/>
+          <mat-error *ngIf="nameFormControl.hasError('required')">
+            Name is <strong>required</strong>
+          </mat-error>
         </mat-form-field>
       </div>
       <div>
@@ -63,13 +66,22 @@
       </div>
       <div>
         <mat-form-field class="example-full-width">
-          <input [(ngModel)]="mission.image" matInput placeholder="Mission image URL"/>
+          <input [(ngModel)]="mission.image" matInput placeholder="Mission image URL" [formControl]="imageFormControl"/>
+          <mat-error *ngIf="imageFormControl.hasError('required')">
+            Image is <strong>required</strong>
+          </mat-error>
         </mat-form-field>
       </div>
     </mat-card-content>
     <mat-card-actions>
-      <a mat-button (click)="add()">SAVE</a>
-      <a mat-button (click)="goBack()">DISCARD</a>
+      <div *ngIf="mission.missionName && mission.image">
+        <a mat-stroked-button (click)="add()">SAVE</a>
+        <a mat-button (click)="goBack()">DISCARD</a>
+      </div>
+      <div *ngIf="!mission.missionName || !mission.image">
+        <a mat-stroked-button disabled>SAVE</a>
+        <a mat-button (click)="goBack()">DISCARD</a>
+      </div>
     </mat-card-actions>
   </mat-card>
 </div>

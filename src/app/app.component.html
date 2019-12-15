@@ -1,11 +1,11 @@
 <mat-sidenav-container class="example-container" >
   <mat-sidenav mode="side" opened>
-    <h1>{{title}}</h1>
-    <nav>
-      <a routerLink="/search">Home</a>
-      <a routerLink="/missions">List of missions</a>
-      <a routerLink="/create">Add new mission</a>
-    </nav>
+    <div class="side-menu">
+      <h3>{{title}}</h3>
+      <p><a mat-button routerLink="/search">Home</a></p>
+      <p><a mat-button routerLink="/missions">All missions</a></p>
+      <p><a mat-button routerLink="/create">Add new mission</a></p>
+    </div>
   </mat-sidenav>
   <mat-sidenav-content>
     <router-outlet></router-outlet>

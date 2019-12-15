@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Mission} from '../mission';
 import {MissionService} from '../mission.service';
 import {Router} from '@angular/router';
+import {FormControl, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-mission-create',
@@ -9,6 +10,14 @@ import {Router} from '@angular/router';
   styleUrls: ['./mission-create.component.css']
 })
 export class MissionCreateComponent implements OnInit {
+
+  nameFormControl = new FormControl('', [
+    Validators.required
+  ]);
+
+  imageFormControl = new FormControl('', [
+    Validators.required
+  ]);
 
   minDate = new Date(1937, 0, 1);
   maxDate = new Date();
