@@ -1,4 +1,21 @@
-<div *ngIf="mission">
+<div *ngIf="mission" class="mission-details-container">
+
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>{{mission.missionName}}</mat-card-title>
+      <mat-card-subtitle>{{mission.clientName}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="{{mission.image}}" alt="Mission photo">
+    <mat-card-content>
+      <p>{{mission.startDate}} - {{mission.endDate}}</p>
+      <p>{{mission.cost}}</p>
+      <p>{{mission.description}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <a mat-button routerLink="/edit/{{mission.id}}">EDIT</a>
+      <a mat-button color="warn" (click)="delete(mission)">DELETE</a>
+    </mat-card-actions>
+  </mat-card>
 
   <button (click)="goBack()">go back</button>
   <h2>{{mission.missionName | uppercase}} Details</h2>
@@ -6,8 +23,11 @@
   <div>
     <p>{{mission.missionName}}</p>
     <p>{{mission.clientName}}</p>
+    <p>{{mission.city}}, {{mission.region}}</p>
+    <p>{{mission.startDate}} - {{mission.endDate}}</p>
+    <p>{{mission.cost}}</p>
+    <p>{{mission.description}}</p>
   </div>
   <a routerLink="/edit/{{mission.id}}">Edit</a>
-  <button class="delete" title="delete hero"
-          (click)="delete(mission)">x</button>
+  <button class="delete" title="delete hero" (click)="delete(mission)">x</button>
 </div>

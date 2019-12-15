@@ -10,39 +10,41 @@ export class InMemoryDataService implements InMemoryDbService {
     const missions = [
       {
         id: 1,
-        missionName: "Hey",
-        clientName: "Client",
-        city: "Paris",
+        missionName: "Canada: Hay River Bridge Re-opened",
+        clientName: "Eiffage",
+        city: "Fort Smith",
         region: 13,
         startDate: new Date(),
         endDate: new Date(),
         cost: 15000,
-        image: "https://designshack.net/wp-content/uploads/placeholder-image.png",
-        description: "Description"
+        image: "https://www.eiffage.com/files/live/sites/eiffage-v2/files/Home/Actualit%c3%a9s/3_bridge_opening_3_1.jpg",
+        description: "In Canada, the Hay River Bridge, a three-bay truss structure on the highway to Fort Smith, was built in the 1960s and needed to be rehabilitated."
       },
       {
         id: 2,
-        missionName: "Hello",
-        clientName: "Client",
+        missionName: "Guyana: Eiffage Métal replaces the Larivot footbridge",
+        clientName: "Eiffage",
         city: "Paris",
         region: 13,
         startDate: new Date(),
         endDate: new Date(),
-        cost: 15000,
-        image: "https://designshack.net/wp-content/uploads/placeholder-image.png",
-        description: "Description"
+        cost: 870000,
+        image: "https://www.eiffage.com/files/live/sites/eiffage-v2/files/Home/Actualit%c3%a9s/passerelle_larivot_1.jpg",
+        description: "Supported by the Vélizy design office and the Le Havre agency, the teams carried out the work, which also included the replacement of the water pipe over the Cayenne River, in a consortium with DLE Outre-Mer, in particular.\n" +
+          "\n" +
+          "The assembly and installation work, comprising 400 t of steel for the 34 supports and 35 sections of 33 m each, involved around 15 employees day and night for 3 months."
       },
       {
         id: 3,
-        missionName: "Good day",
-        clientName: "Client",
-        city: "Paris",
+        missionName: "Eiffage Rail teams on the Lille tramway",
+        clientName: "Eiffage",
+        city: "Lille",
         region: 13,
         startDate: new Date(),
         endDate: new Date(),
         cost: 15000,
-        image: "https://designshack.net/wp-content/uploads/placeholder-image.png",
-        description: "Description"
+        image: "https://www.eiffage.com/files/live/sites/eiffage-v2/files/Home/Actualit%c3%a9s/valorisation_chantier_tramway_4_1.jpg",
+        description: "The teams of the Marly agency, with the participation of Eiffage Route for the asphalt part, carried out this project in 3 months, located in the heart of the city. In order to reduce the impact on users, the work was carried out in short nights (2h40 of effective work per night) over three consecutive weekends."
       }
     ];
     return {missions};

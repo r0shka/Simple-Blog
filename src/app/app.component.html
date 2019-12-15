@@ -1,7 +1,15 @@
-<h1>{{title}}</h1>
-<nav>
-  <a routerLink="/search">Home</a>
-  <a routerLink="/missions">List of missions</a>
-  <a routerLink="/create">Add new mission</a>
-</nav>
-<router-outlet></router-outlet>
+<mat-sidenav-container class="example-container" >
+  <mat-sidenav mode="side" opened>
+    <h1>{{title}}</h1>
+    <nav>
+      <a routerLink="/search">Home</a>
+      <a routerLink="/missions">List of missions</a>
+      <a routerLink="/create">Add new mission</a>
+    </nav>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+

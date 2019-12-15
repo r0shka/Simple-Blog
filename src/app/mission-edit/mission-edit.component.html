@@ -5,14 +5,19 @@
   <div><span>id: </span>{{mission.id}}</div>
   <div>
     <label>Mission name:
-      <input [(ngModel)]="mission.missionName" placeholder="mission name"/>
+      <input [(ngModel)]="mission.missionName" placeholder="Mission name"/>
     </label>
   </div>
   <div>
     <label>Client name:
-      <input [(ngModel)]="mission.clientName" placeholder="client name"/>
+      <input [(ngModel)]="mission.clientName" placeholder="Client name"/>
     </label>
   </div>
-  <button (click)="save()">save</button>
+  <div>
+    <label>City:
+      <input [(ngModel)]="mission.city" placeholder="City"/>
+    </label>
+  </div>
+  <button (click)="save()">Save</button>
 </div>
 

@@ -13,6 +13,10 @@ import { InMemoryDataService }  from './in-memory-data.service';
 import { MissionCreateComponent } from './mission-create/mission-create.component';
 import { MissionEditComponent } from './mission-edit/mission-edit.component';
 
+import { MatSliderModule } from '@angular/material/slider';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule, MatCardModule, MatSidenavModule, MatToolbarModule} from '@angular/material';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,10 +30,16 @@ import { MissionEditComponent } from './mission-edit/mission-edit.component';
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    MatSliderModule,
     AppRoutingModule,
     HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }
-    )
+      InMemoryDataService, {dataEncapsulation: false}
+    ),
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatCardModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
