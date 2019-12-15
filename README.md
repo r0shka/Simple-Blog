@@ -1,15 +1,21 @@
 # AA-Angular-Project
 
 Angular project made by Astou Gueye and Vadym Roshka.
-
-## Live version
+Current functionality:
+- displaying list of projects
+- displaying details of a project
+- searching project by the name
+- creating and saving new project
+- editing and saving existing project
+- deleting a project
+- sensible information (Create, Edit) in separate components in order to later hide it with Route Guard
 
 Live version deployed on Firebase available [here](https://engineering-company-project.firebaseapp.com/)
 
 ## TODO
 
 - hide sensible pages (add, edit) with Route Guard
-- better hide sensitive field cost (not with ngIf statement)
+- better hide sensitive field "cost"
 - proper authentication
 - image in exported PDF  
 
