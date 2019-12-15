@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Mission} from '../mission';
-import { MissionService } from '../mission.service';
+import {MissionService} from '../mission.service';
 import {Router} from '@angular/router';
 
 @Component({
@@ -10,17 +10,37 @@ import {Router} from '@angular/router';
 })
 export class MissionCreateComponent implements OnInit {
 
-  constructor(private missionService: MissionService, private router: Router) { }
+  minDate = new Date(1937, 0, 1);
+  maxDate = new Date();
+
+  cities: string[] = [
+    'Paris', 'Marseille', 'Lyon', 'Nice', 'Montpellier', 'Strasbourg'
+  ];
+
+  regions: number[] = [
+    75, 13, 83, 6, 34, 67
+  ];
+
+  mission: Mission;
+
+  constructor(private missionService: MissionService, private router: Router) {
+    this.mission = new Mission();
+  }
 
   ngOnInit() {
   }
 
-  add(missionName: string): void {
-    console.log(missionName);
-    missionName = missionName.trim();
-    if (!missionName) { return; }
-    this.missionService.addMission({ missionName } as Mission)
+  add(): void {
+    console.log(this.mission);
+    if (!this.mission) {
+      return;
+    }
+    this.missionService.addMission(this.mission)
       .subscribe(() => this.router.navigateByUrl('/missions'));
+  }
+
+  goBack(): void {
+    this.router.navigateByUrl('/missions');
   }
 
 }

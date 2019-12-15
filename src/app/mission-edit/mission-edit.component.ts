@@ -3,7 +3,7 @@ import {Mission} from '../mission';
 import {ActivatedRoute} from '@angular/router';
 import {MissionService} from '../mission.service';
 import {Location} from '@angular/common';
-
+import {FormControl} from '@angular/forms';
 
 
 @Component({
@@ -13,11 +13,22 @@ import {Location} from '@angular/common';
 })
 export class MissionEditComponent implements OnInit {
 
+  minDate = new Date(1937, 0, 1);
+  maxDate = new Date();
+  cities: string[] = [
+    'Paris', 'Marseille', 'Lyon', 'Nice', 'Montpellier', 'Strasbourg'
+  ];
+
+  regions: number[] = [
+    75, 13, 83, 6, 34, 67
+  ];
+
   @Input() mission: Mission;
 
   constructor(private route: ActivatedRoute,
               private missionService: MissionService,
-              private location: Location) { }
+              private location: Location) {
+  }
 
   ngOnInit() {
     this.getMission();

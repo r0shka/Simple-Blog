@@ -7,9 +7,10 @@
     </mat-card-header>
     <img mat-card-image src="{{mission.image}}" alt="Mission photo">
     <mat-card-content>
-      <p>{{mission.startDate}} - {{mission.endDate}}</p>
-      <p>{{mission.cost}}</p>
-      <p>{{mission.description}}</p>
+      <p class="mat-h4">{{mission.city}}, {{mission.region}}</p>
+      <p class="mat-body-2">{{mission.startDate | date:'longDate'}} - {{mission.endDate | date:'longDate'}}</p>
+      <p class="mat-body-2">Cost of operation: {{mission.cost | currency:'EUR'}}</p>
+      <p class="mat-body-1">{{mission.description}}</p>
     </mat-card-content>
     <mat-card-actions>
       <a mat-button routerLink="/edit/{{mission.id}}">EDIT</a>
@@ -17,17 +18,4 @@
     </mat-card-actions>
   </mat-card>
 
-  <button (click)="goBack()">go back</button>
-  <h2>{{mission.missionName | uppercase}} Details</h2>
-  <div><span>id: </span>{{mission.id}}</div>
-  <div>
-    <p>{{mission.missionName}}</p>
-    <p>{{mission.clientName}}</p>
-    <p>{{mission.city}}, {{mission.region}}</p>
-    <p>{{mission.startDate}} - {{mission.endDate}}</p>
-    <p>{{mission.cost}}</p>
-    <p>{{mission.description}}</p>
-  </div>
-  <a routerLink="/edit/{{mission.id}}">Edit</a>
-  <button class="delete" title="delete hero" (click)="delete(mission)">x</button>
 </div>

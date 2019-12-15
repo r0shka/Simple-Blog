@@ -1,21 +1,30 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {FormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
 
-import { AppComponent } from './app.component';
-import { MissionListComponent } from './mission-list/mission-list.component';
-import { MissionDetailsComponent } from './mission-details/mission-details.component';
-import { AppRoutingModule } from './app-routing.module';
-import { MissionSearchComponent } from './mission-search/mission-search.component';
-import { InMemoryDataService }  from './in-memory-data.service';
-import { MissionCreateComponent } from './mission-create/mission-create.component';
-import { MissionEditComponent } from './mission-edit/mission-edit.component';
+import {AppComponent} from './app.component';
+import {MissionListComponent} from './mission-list/mission-list.component';
+import {MissionDetailsComponent} from './mission-details/mission-details.component';
+import {AppRoutingModule} from './app-routing.module';
+import {MissionSearchComponent} from './mission-search/mission-search.component';
+import {InMemoryDataService} from './in-memory-data.service';
+import {MissionCreateComponent} from './mission-create/mission-create.component';
+import {MissionEditComponent} from './mission-edit/mission-edit.component';
 
-import { MatSliderModule } from '@angular/material/slider';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCardModule, MatSidenavModule, MatToolbarModule} from '@angular/material';
+import {MatSliderModule} from '@angular/material/slider';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {
+  MatButtonModule,
+  MatCardModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MatInputModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatToolbarModule
+} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -39,9 +48,16 @@ import {MatButtonModule, MatCardModule, MatSidenavModule, MatToolbarModule} from
     MatToolbarModule,
     MatSidenavModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    MatInputModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
-  providers: [],
+  providers: [
+    MatDatepickerModule
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

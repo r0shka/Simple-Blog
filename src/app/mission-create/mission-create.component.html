@@ -1,9 +1,75 @@
-<div>
-  <label>Mission name:
-    <input #missionName />
-  </label>
-  <!-- (click) passes input value to add() and then clears the input -->
-  <button (click)="add(missionName.value); missionName.value=''">
-    add
-  </button>
+<div class="mission-details-container">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>Adding new mission</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div>
+        <mat-form-field class="example-full-width">
+          <input [(ngModel)]="mission.missionName" matInput placeholder="Mission name"/>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="example-full-width">
+          <input [(ngModel)]="mission.clientName" matInput placeholder="Client name"/>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <mat-label>City</mat-label>
+          <mat-select [(ngModel)]="mission.city">
+            <mat-option *ngFor="let city of cities" [value]="city">
+              {{city}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <mat-label>Region</mat-label>
+          <mat-select [(ngModel)]="mission.region">
+            <mat-option *ngFor="let region of regions" [value]="region">
+              {{region}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker3" placeholder="Start date"
+                 [(ngModel)]="mission.startDate">
+          <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+          <mat-datepicker #picker3></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker2" placeholder="End date"
+                 [(ngModel)]="mission.endDate">
+          <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-datepicker #picker2></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <span matPrefix>€ &nbsp;</span>
+          <input type="number" matInput placeholder="Cost" [(ngModel)]="mission.cost">
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="example-full-width">
+          <textarea [(ngModel)]="mission.description" matInput placeholder="Description"></textarea>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="example-full-width">
+          <input [(ngModel)]="mission.image" matInput placeholder="Mission image URL"/>
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <a mat-button (click)="add()">SAVE</a>
+      <a mat-button (click)="goBack()">DISCARD</a>
+    </mat-card-actions>
+  </mat-card>
 </div>
