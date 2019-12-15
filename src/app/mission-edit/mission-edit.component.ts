@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Mission} from '../mission';
+import {Mission} from '../model/mission';
 import {ActivatedRoute} from '@angular/router';
 import {MissionService} from '../services/mission.service';
 import {Location} from '@angular/common';

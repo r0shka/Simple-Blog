@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Mission } from '../mission';
+import { Mission } from '../model/mission';
 
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
@@ -16,7 +16,8 @@ export class MissionDetailsComponent implements OnInit {
   exportAsConfig: ExportAsConfig = {
     type: 'pdf', // the type you want to download
     elementId: 'mission-file', // the id of html/table element
-  }
+  };
+
 
   @Input() mission: Mission;
 

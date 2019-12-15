@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Mission} from '../mission';
+import {Mission} from '../model/mission';
 import {MissionService} from '../services/mission.service';
 import {Router} from '@angular/router';
 import {FormControl, Validators} from '@angular/forms';

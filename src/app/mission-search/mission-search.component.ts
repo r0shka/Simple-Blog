@@ -5,7 +5,7 @@ import {
   debounceTime, distinctUntilChanged, switchMap
 } from 'rxjs/operators';
 
-import { Mission} from '../mission';
+import { Mission} from '../model/mission';
 import { MissionService } from '../services/mission.service';
 
 @Component({

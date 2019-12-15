@@ -2,6 +2,10 @@
 
 Angular project made by Astou Gueye and Vadym Roshka.
 
+## Live version
+
+Live version deployed on Firebase available [here](https://engineering-company-project.firebaseapp.com/)
+
 ## TODO
 
 - hide sensible pages (add, edit) with Route Guard
