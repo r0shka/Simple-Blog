@@ -18,7 +18,8 @@ Live version deployed on Firebase available [here](https://engineering-company-p
 - hide sensible pages (add, edit) with Route Guard
 - better hide sensitive field "cost"
 - proper authentication
-- image in exported PDF  
+- image in exported PDF
+- adaptive mobile version  
 
 ## PDF Export
 
